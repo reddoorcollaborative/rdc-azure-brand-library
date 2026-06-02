@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Microsoft Azure — Brand Library</title>
+  <style>
+    /* ─── Reset & Base ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --azure-blue:       #0078d4;
+      --energy-blue:      #0000b3;
+      --deep-blue:        #000085;
+      --navy-blue:        #0d0061;
+      --electric-blue:    #1a00e2;
+      --bright-indigo:    #5d52ec;
+      --sky-blue:         #00ffff;
+      --turquoise:        #00bbc3;
+      --lavender:         #aac0fc;
+      --mint:             #cff3e8;
+      --plum:             #590055;
+      --fuschia:          #d12aca;
+      --light-green:      #d4ec8e;
+      --light-gray:       #d9d9d6;
+      --pure-white:       #ffffff;
+      --bg:               #f4f6f9;
+      --surface:          #ffffff;
+      --text-primary:     #111827;
+      --text-secondary:   #4b5563;
+      --border:           #e5e7eb;
+      --nav-width:        260px;
+      --radius:           12px;
+      --radius-lg:        20px;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      display: flex;
+    }
+
+    /* ─── Sidebar Nav ─── */
+    nav {
+      position: fixed; top: 0; left: 0;
+      width: var(--nav-width); height: 100vh;
+      background: var(--navy-blue);
+      overflow-y: auto;
+      display: flex; flex-direction: column;
+      z-index: 100;
+      padding-bottom: 2rem;
+    }
+    .nav-brand {
+      padding: 1.75rem 1.5rem 1.25rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .nav-brand .eyebrow {
+      font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(255,255,255,0.5); margin-bottom: 0.35rem;
+    }
+    .nav-brand .title {
+      font-size: 1rem; font-weight: 600; color: #fff;
+    }
+    .nav-brand .subtitle {
+      font-size: 0.72rem; color: rgba(255,255,255,0.4); margin-top: 0.15rem;
+    }
+    .nav-section-label {
+      font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(255,255,255,0.3); padding: 1.25rem 1.5rem 0.4rem;
+    }
+    nav a {
+      display: block; padding: 0.55rem 1.5rem;
+      font-size: 0.825rem; color: rgba(255,255,255,0.65);
+      text-decoration: none; transition: all 0.15s;
+      border-left: 2px solid transparent;
+    }
+    nav a:hover { color: #fff; background: rgba(255,255,255,0.06); border-left-color: var(--azure-blue); }
+    nav a.active { color: #fff; background: rgba(0,120,212,0.2); border-left-color: var(--azure-blue); }
+
+    /* ─── Main Content ─── */
+    main {
+      margin-left: var(--nav-width);
+      flex: 1;
+      padding: 0;
+    }
+
+    /* ─── Hero ─── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy-blue) 0%, var(--deep-blue) 40%, var(--energy-blue) 80%, var(--electric-blue) 100%);
+      padding: 5rem 4rem 4rem;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: 'AZURE';
+      position: absolute; right: -2rem; top: 50%; transform: translateY(-50%);
+      font-size: 18rem; font-weight: 900; letter-spacing: -0.05em;
+      color: rgba(255,255,255,0.04); pointer-events: none; line-height: 1;
+    }
+    .hero-eyebrow {
+      font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--sky-blue); margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 3.75rem);
+      font-weight: 300; color: #fff; line-height: 1.1;
+      margin-bottom: 1.25rem; max-width: 640px;
+    }
+    .hero h1 strong { font-weight: 700; }
+    .hero p {
+      font-size: 1rem; color: rgba(255,255,255,0.65);
+      max-width: 560px; line-height: 1.7;
+    }
+    .hero-meta {
+      margin-top: 2.5rem; display: flex; gap: 2rem;
+    }
+    .hero-meta-item label {
+      font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: rgba(255,255,255,0.4); display: block; margin-bottom: 0.2rem;
+    }
+    .hero-meta-item span { font-size: 0.85rem; color: rgba(255,255,255,0.75); }
+
+    /* ─── Sections ─── */
+    section {
+      padding: 4rem;
+      border-bottom: 1px solid var(--border);
+    }
+    section:last-child { border-bottom: none; }
+    .section-eyebrow {
+      font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--azure-blue); margin-bottom: 0.5rem; font-weight: 600;
+    }
+    h2 {
+      font-size: 1.75rem; font-weight: 600; margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+    .section-intro {
+      font-size: 0.95rem; color: var(--text-secondary);
+      max-width: 680px; margin-bottom: 2.5rem; line-height: 1.7;
+    }
+
+    /* ─── Cards ─── */
+    .card-grid { display: grid; gap: 1rem; }
+    .card-grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .card-grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .card-grid-4 { grid-template-columns: repeat(4, 1fr); }
+    .card {
+      background: var(--surface); border-radius: var(--radius);
+      border: 1px solid var(--border); padding: 1.5rem;
+    }
+    .card-title {
+      font-size: 0.8rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.08em; margin-bottom: 0.75rem; color: var(--text-primary);
+    }
+    .card p { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.65; }
+
+    /* ─── Design Principles ─── */
+    .principles-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;
+    }
+    .principle-card {
+      background: var(--surface); border-radius: var(--radius-lg);
+      border: 1px solid var(--border); padding: 2rem 1.75rem;
+      position: relative; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .principle-card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
+    .principle-number {
+      font-size: 3.5rem; font-weight: 900; position: absolute;
+      top: -0.5rem; right: 1rem; color: rgba(0,120,212,0.06); line-height: 1;
+    }
+    .principle-icon {
+      width: 40px; height: 40px; border-radius: 10px;
+      background: linear-gradient(135deg, var(--azure-blue), var(--bright-indigo));
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+    .principle-title {
+      font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem;
+    }
+    .principle-desc {
+      font-size: 0.85rem; color: var(--text-secondary); line-height: 1.65;
+    }
+
+    /* ─── Logo ─── */
+    .logo-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    .logo-block {
+      border-radius: var(--radius-lg); padding: 2.5rem; min-height: 160px;
+      display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
+    }
+    .logo-block.light { background: #f8f9fa; border: 1px solid var(--border); }
+    .logo-block.dark { background: var(--navy-blue); }
+    .logo-block.color-bg { background: var(--azure-blue); }
+    .logo-block.dark-color { background: var(--deep-blue); }
+    .logo-svg { width: 200px; }
+    .logo-label {
+      font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
+      margin-top: 1rem; font-weight: 600;
+    }
+    .logo-block.light .logo-label { color: var(--text-secondary); }
+    .logo-block.dark .logo-label, .logo-block.color-bg .logo-label, .logo-block.dark-color .logo-label {
+      color: rgba(255,255,255,0.5);
+    }
+    .logo-rules {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+    }
+    .logo-rule-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 1.25rem;
+    }
+    .logo-rule-card h4 { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; }
+    .logo-rule-card p { font-size: 0.8rem; color: var(--text-secondary); }
+
+    /* ─── Color Palette ─── */
+    .color-section-title {
+      font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.1em; color: var(--text-secondary);
+      margin-bottom: 0.75rem; margin-top: 2rem;
+    }
+    .color-section-title:first-of-type { margin-top: 0; }
+    .color-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 0.875rem; margin-bottom: 0.5rem;
+    }
+    .swatch {
+      border-radius: var(--radius); overflow: hidden;
+      border: 1px solid rgba(0,0,0,0.06); cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .swatch:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
+    .swatch-color { height: 80px; width: 100%; }
+    .swatch-info { background: var(--surface); padding: 0.65rem 0.75rem; }
+    .swatch-name { font-size: 0.75rem; font-weight: 600; color: var(--text-primary); }
+    .swatch-hex {
+      font-size: 0.7rem; color: var(--text-secondary); font-family: monospace;
+      display: flex; align-items: center; justify-content: space-between;
+      margin-top: 0.2rem;
+    }
+    .copy-btn {
+      background: none; border: none; cursor: pointer; padding: 0;
+      color: var(--azure-blue); font-size: 0.65rem; opacity: 0;
+      transition: opacity 0.15s;
+    }
+    .swatch:hover .copy-btn { opacity: 1; }
+    .copy-btn:hover { text-decoration: underline; }
+    .toast {
+      position: fixed; bottom: 2rem; right: 2rem;
+      background: var(--text-primary); color: #fff;
+      padding: 0.75rem 1.25rem; border-radius: 8px;
+      font-size: 0.85rem; opacity: 0; pointer-events: none;
+      transition: opacity 0.3s;
+      z-index: 999;
+    }
+    .toast.show { opacity: 1; }
+    .color-usage-bar {
+      display: flex; height: 40px; border-radius: 8px; overflow: hidden;
+      margin-bottom: 0.75rem; border: 1px solid var(--border);
+    }
+    .usage-segment {
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem; font-weight: 700; color: #fff;
+      transition: flex 0.3s;
+    }
+    .usage-segment.dark { color: rgba(255,255,255,0.8); }
+    .usage-legend {
+      display: flex; gap: 1.5rem; flex-wrap: wrap;
+    }
+    .usage-item {
+      display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; color: var(--text-secondary);
+    }
+    .usage-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+
+    /* ─── Color Pairing ─── */
+    .pairing-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1rem;
+    }
+    .pairing-card {
+      border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border);
+    }
+    .pairing-preview {
+      height: 80px; display: flex; align-items: center;
+      justify-content: center; font-size: 1rem; font-weight: 600; letter-spacing: 0.02em;
+    }
+    .pairing-meta {
+      background: var(--surface); padding: 0.6rem 0.875rem;
+      font-size: 0.72rem; color: var(--text-secondary);
+    }
+    .pairing-meta strong { color: var(--text-primary); display: block; font-size: 0.78rem; margin-bottom: 0.15rem; }
+
+    /* ─── Typography ─── */
+    .type-specimen {
+      background: var(--surface); border-radius: var(--radius-lg);
+      border: 1px solid var(--border); padding: 2.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .type-meta {
+      display: flex; gap: 2rem; margin-bottom: 1.25rem;
+      padding-bottom: 1rem; border-bottom: 1px solid var(--border);
+    }
+    .type-meta-item label {
+      font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--text-secondary); display: block; margin-bottom: 0.2rem;
+    }
+    .type-meta-item span { font-size: 0.85rem; font-weight: 500; }
+    .type-sample-xl {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      font-size: 3.5rem; font-weight: 300; line-height: 1.1;
+      color: var(--text-primary); margin-bottom: 1rem;
+    }
+    .type-sample-lg {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      font-size: 2rem; font-weight: 300; line-height: 1.2;
+      color: var(--text-primary); margin-bottom: 0.75rem;
+    }
+    .type-sample-subhead {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--text-secondary); margin-bottom: 0.75rem;
+    }
+    .type-sample-body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      font-size: 1rem; font-weight: 400; line-height: 1.7;
+      color: var(--text-secondary);
+    }
+    .weight-table {
+      width: 100%; border-collapse: collapse;
+    }
+    .weight-table tr { border-bottom: 1px solid var(--border); }
+    .weight-table tr:last-child { border-bottom: none; }
+    .weight-table td { padding: 1rem 1.25rem; font-size: 0.875rem; }
+    .weight-table td:first-child { color: var(--text-secondary); width: 120px; font-size: 0.8rem; }
+    .weight-table td:nth-child(2) { font-family: 'Segoe UI', sans-serif; font-size: 1.25rem; }
+    .weight-table td:last-child { color: var(--text-secondary); font-size: 0.75rem; font-family: monospace; }
+    .w-100 { font-weight: 100; }
+    .w-200 { font-weight: 200; }
+    .w-300 { font-weight: 300; }
+    .w-350 { font-weight: 350; }
+    .w-400 { font-weight: 400; }
+    .w-600 { font-weight: 600; }
+    .w-700 { font-weight: 700; }
+    .w-800 { font-weight: 800; }
+    .w-900 { font-weight: 900; }
+    .type-scale-grid {
+      display: flex; flex-direction: column; gap: 1px;
+      background: var(--border); border-radius: var(--radius-lg);
+      overflow: hidden; margin-top: 1.5rem;
+    }
+    .type-scale-row {
+      background: var(--surface); display: flex; align-items: center;
+      padding: 1.5rem 1.75rem; gap: 2rem;
+    }
+    .scale-label { width: 80px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--azure-blue); flex-shrink: 0; }
+    .scale-sample { font-family: 'Segoe UI', sans-serif; font-weight: 300; color: var(--text-primary); flex: 1; }
+    .scale-spec { font-size: 0.72rem; color: var(--text-secondary); font-family: monospace; flex-shrink: 0; text-align: right; }
+
+    /* ─── Photography ─── */
+    .photo-cat-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;
+    }
+    .photo-cat-card {
+      background: var(--surface); border-radius: var(--radius-lg);
+      border: 1px solid var(--border); overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .photo-cat-card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
+    .photo-cat-header {
+      height: 120px; position: relative;
+      display: flex; align-items: flex-end; padding: 1rem 1.25rem;
+    }
+    .photo-cat-header span {
+      color: #fff; font-size: 1.1rem; font-weight: 700; position: relative; z-index: 1;
+    }
+    .photo-cat-body { padding: 1.25rem; }
+    .photo-cat-body p { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 0.875rem; }
+    .photo-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .tag {
+      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.04em;
+      background: #eff6ff; color: var(--azure-blue); border-radius: 4px;
+      padding: 0.2rem 0.5rem;
+    }
+    .tag.green { background: #f0fdf4; color: #15803d; }
+    .tag.purple { background: #f5f3ff; color: #6d28d9; }
+    .tag.red { background: #fff1f2; color: #be123c; }
+
+    /* ─── Graphic Language ─── */
+    .shapes-grid {
+      display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.75rem;
+    }
+    .shape-chip {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1rem; text-align: center;
+    }
+    .shape-visual {
+      width: 48px; height: 48px; margin: 0 auto 0.5rem;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .shape-name {
+      font-size: 0.72rem; color: var(--text-secondary); font-weight: 500;
+    }
+    .wireframe-colors {
+      display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem;
+    }
+    .wire-chip {
+      display: flex; align-items: center; gap: 0.5rem;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 0.4rem 0.75rem; font-size: 0.75rem;
+    }
+    .wire-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+    .texture-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;
+    }
+    .texture-card {
+      border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border);
+    }
+    .texture-preview { height: 80px; position: relative; }
+    .texture-card-name {
+      background: var(--surface); padding: 0.5rem 0.75rem;
+      font-size: 0.75rem; font-weight: 600; color: var(--text-primary);
+    }
+    .texture-variants {
+      background: var(--surface); padding: 0 0.75rem 0.5rem;
+      font-size: 0.7rem; color: var(--text-secondary);
+    }
+
+    /* ─── Design Layouts ─── */
+    .layout-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+    }
+    .layout-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.5rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .layout-card:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
+    .layout-thumb {
+      height: 90px; border-radius: 8px;
+      margin-bottom: 0.875rem;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem; color: rgba(255,255,255,0.6); letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .layout-name { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.35rem; }
+    .layout-desc { font-size: 0.78rem; color: var(--text-secondary); }
+
+    /* ─── Usage Spectrum ─── */
+    .spectrum-bar {
+      height: 56px; border-radius: 10px; overflow: hidden;
+      display: flex; margin-bottom: 1.25rem;
+    }
+    .spectrum-seg {
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.78rem; font-weight: 700; color: rgba(255,255,255,0.9);
+      transition: flex 0.3s;
+    }
+
+    /* ─── Resources ─── */
+    .resources-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+    }
+    .resource-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.25rem;
+      display: flex; align-items: flex-start; gap: 0.875rem;
+    }
+    .resource-icon {
+      width: 36px; height: 36px; border-radius: 8px;
+      background: #eff6ff; display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+    .resource-text h4 { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.25rem; }
+    .resource-text p { font-size: 0.78rem; color: var(--text-secondary); }
+
+    /* ─── Footer ─── */
+    footer {
+      background: var(--navy-blue); color: rgba(255,255,255,0.5);
+      padding: 2rem 4rem;
+      font-size: 0.8rem; display: flex; justify-content: space-between; align-items: center;
+    }
+    footer strong { color: rgba(255,255,255,0.8); }
+
+    /* ─── Divider ─── */
+    .divider { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+
+    /* ─── Holding Shape Demo ─── */
+    .holding-demo {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 1rem;
+    }
+    .holding-shape {
+      border-radius: 50px 50px 50px 50px;
+      overflow: hidden; height: 140px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .holding-shape.vertical {
+      width: 100%; border-radius: 9999px / 60px;
+    }
+    .holding-shape-label {
+      font-size: 0.72rem; color: var(--text-secondary); text-align: center;
+      margin-top: 0.5rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 1100px) {
+      :root { --nav-width: 220px; }
+      .principles-grid, .photo-cat-grid { grid-template-columns: repeat(2, 1fr); }
+      .card-grid-4 { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      nav { display: none; }
+      main { margin-left: 0; }
+      section { padding: 2.5rem 1.5rem; }
+      .hero { padding: 3rem 1.5rem; }
+      .principles-grid, .photo-cat-grid, .layout-grid { grid-template-columns: 1fr; }
+      .logo-grid { grid-template-columns: 1fr; }
+      .card-grid-3, .card-grid-4 { grid-template-columns: 1fr 1fr; }
+      .shapes-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════ SIDEBAR ═══════════════════════════════ -->
+<nav id="sidebar">
+  <div class="nav-brand">
+    <div class="eyebrow">Red Door Collaborative</div>
+    <div class="title">Microsoft Azure</div>
+    <div class="subtitle">Brand Library · April 2026</div>
+  </div>
+  <span class="nav-section-label">Brand System</span>
+  <a href="#intro">Introduction</a>
+  <a href="#principles">Design Principles</a>
+  <a href="#logo">Logo</a>
+  <a href="#color">Color Palette</a>
+  <a href="#typography">Typography</a>
+  <span class="nav-section-label">Expression</span>
+  <a href="#photography">Photography</a>
+  <a href="#graphic-language">Graphic Language</a>
+  <a href="#holding-shapes">Holding Shapes</a>
+  <a href="#textures">Texture Backgrounds</a>
+  <a href="#layouts">Design Layouts</a>
+  <span class="nav-section-label">Reference</span>
+  <a href="#resources">Resources & Assets</a>
+</nav>
+
+<!-- ═══════════════════════════════ MAIN ═══════════════════════════════ -->
+<main>
+
+  <!-- HERO -->
+  <div class="hero" id="intro">
+    <div class="hero-eyebrow">Brand Guidance · Visual Expression</div>
+    <h1>Microsoft <strong>Azure</strong><br>Brand Library</h1>
+    <p>A curated reference of Azure's visual brand system — covering design principles, color, typography, photography, and graphic language. Built for the Red Door Collaborative team.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <label>Source Document</label>
+        <span>Visual Brand Expression 2604</span>
+      </div>
+      <div class="hero-meta-item">
+        <label>Version</label>
+        <span>April 2026</span>
+      </div>
+      <div class="hero-meta-item">
+        <label>Typeface</label>
+        <span>Segoe Sans Display</span>
+      </div>
+      <div class="hero-meta-item">
+        <label>Theme</label>
+        <span>Build in Public</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ DESIGN PRINCIPLES ═══ -->
+  <section id="principles" style="background: #fff;">
+    <div class="section-eyebrow">02 — Design Principles</div>
+    <h2>Build in Public</h2>
+    <p class="section-intro">Azure's visual identity is guided by six design principles that shape every creative decision — from photography and typography to 3D graphic language and layout composition.</p>
+    <div class="principles-grid">
+      <div class="principle-card">
+        <div class="principle-number">01</div>
+        <div class="principle-icon">🔭</div>
+        <div class="principle-title">Immersion</div>
+        <p class="principle-desc">The world of Azure is rich in activity and detail, taking place in both physical and conceptual spaces. Immersion allows us to dive in and glimpse those scenes in captivating detail.</p>
+      </div>
+      <div class="principle-card">
+        <div class="principle-number">02</div>
+        <div class="principle-icon">∞</div>
+        <div class="principle-title">Infinite</div>
+        <p class="principle-desc">The limitless innovation of Azure is experienced through vast scale — both in terms of possibilities (3D unlimited data flows) and capabilities (cinematic wide views of physical spaces).</p>
+      </div>
+      <div class="principle-card">
+        <div class="principle-number">03</div>
+        <div class="principle-icon">⚙️</div>
+        <div class="principle-title">Expert</div>
+        <p class="principle-desc">The deep technical expertise required to build and maintain Azure is expressed through photography of scenes and team members, schematic illustrations, and purposeful headlines.</p>
+      </div>
+      <div class="principle-card">
+        <div class="principle-number">04</div>
+        <div class="principle-icon">🔬</div>
+        <div class="principle-title">Curious</div>
+        <p class="principle-desc">A relentless spirit of innovation and desire to solve complex problems. Close-up and macro photography views feature the beautiful details seen in frontier technology.</p>
+      </div>
+      <div class="principle-card">
+        <div class="principle-number">05</div>
+        <div class="principle-icon">→</div>
+        <div class="principle-title">Forward</div>
+        <p class="principle-desc">Azure's forward momentum is expressed in photographic scenes through central focal points and moving subjects, as well as movement of objects in 3D spaces.</p>
+      </div>
+      <div class="principle-card">
+        <div class="principle-number">06</div>
+        <div class="principle-icon">👤</div>
+        <div class="principle-title">Authentic</div>
+        <p class="principle-desc">The brand features real people and places. It's expressed using traits of the Microsoft brand to create a rich visual world unique to Azure — never overly staged or synthetic.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ LOGO ═══ -->
+  <section id="logo">
+    <div class="section-eyebrow">03 — Logo</div>
+    <h2>Logo Usage</h2>
+    <p class="section-intro">The positive (full-color) logo is the preferred primary logo. Reverse and single-color versions are available for specific backgrounds. A secondary stacked logo is available for tight spaces.</p>
+
+    <div class="logo-grid">
+      <div class="logo-block light">
+        <svg class="logo-svg" viewBox="0 0 220 42" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Microsoft Azure logo on light background">
+          <!-- Simplified Azure logo wordmark representation -->
+          <rect x="0" y="5" width="32" height="32" rx="2" fill="#0078d4"/>
+          <polygon points="8,32 16,10 24,32 20,32 16,20 12,32" fill="white"/>
+          <text x="40" y="27" font-family="Segoe UI,sans-serif" font-size="16" fill="#0078d4" font-weight="300">Microsoft</text>
+          <text x="40" y="38" font-family="Segoe UI,sans-serif" font-size="10" fill="#0078d4" letter-spacing="1.5">Azure</text>
+        </svg>
+        <span class="logo-label">Positive Logo · Light Background (Primary)</span>
+      </div>
+      <div class="logo-block dark">
+        <svg class="logo-svg" viewBox="0 0 220 42" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Microsoft Azure logo on dark background">
+          <rect x="0" y="5" width="32" height="32" rx="2" fill="#0078d4"/>
+          <polygon points="8,32 16,10 24,32 20,32 16,20 12,32" fill="white"/>
+          <text x="40" y="27" font-family="Segoe UI,sans-serif" font-size="16" fill="#ffffff" font-weight="300">Microsoft</text>
+          <text x="40" y="38" font-family="Segoe UI,sans-serif" font-size="10" fill="#ffffff" letter-spacing="1.5">Azure</text>
+        </svg>
+        <span class="logo-label">Reverse Logo · Dark Background (Primary)</span>
+      </div>
+      <div class="logo-block color-bg">
+        <svg class="logo-svg" viewBox="0 0 220 42" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Azure logo on color background">
+          <rect x="0" y="5" width="32" height="32" rx="2" fill="rgba(255,255,255,0.2)"/>
+          <polygon points="8,32 16,10 24,32 20,32 16,20 12,32" fill="white"/>
+          <text x="40" y="27" font-family="Segoe UI,sans-serif" font-size="16" fill="#ffffff" font-weight="300">Microsoft</text>
+          <text x="40" y="38" font-family="Segoe UI,sans-serif" font-size="10" fill="#ffffff" letter-spacing="1.5">Azure</text>
+        </svg>
+        <span class="logo-label">Single-color · Color Background (Medium value)</span>
+      </div>
+      <div class="logo-block dark-color">
+        <svg class="logo-svg" viewBox="0 0 220 42" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Azure logo on deep color background">
+          <rect x="0" y="5" width="32" height="32" rx="2" fill="#0078d4"/>
+          <polygon points="8,32 16,10 24,32 20,32 16,20 12,32" fill="white"/>
+          <text x="40" y="27" font-family="Segoe UI,sans-serif" font-size="16" fill="#ffffff" font-weight="300">Microsoft</text>
+          <text x="40" y="38" font-family="Segoe UI,sans-serif" font-size="10" fill="#ffffff" letter-spacing="1.5">Azure</text>
+        </svg>
+        <span class="logo-label">Color Logo · Dark Color Background (Dark value)</span>
+      </div>
+    </div>
+
+    <div class="logo-rules">
+      <div class="logo-rule-card">
+        <h4>Clearspace</h4>
+        <p>Maintain a minimum clearspace of <strong>1×</strong> the logo symbol size on all sides.</p>
+      </div>
+      <div class="logo-rule-card">
+        <h4>Layout Margins</h4>
+        <p>Preserve a minimum margin of <strong>1× or 2×</strong> the logo symbol in design layouts.</p>
+      </div>
+      <div class="logo-rule-card">
+        <h4>Product Icon ≠ Logo</h4>
+        <p>The Azure product icon is not a logo. Never use it in marketing materials — use the full Azure logo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ COLOR ═══ -->
+  <section id="color" style="background: #fff;">
+    <div class="section-eyebrow">04 — Color</div>
+    <h2>Color Palette</h2>
+    <p class="section-intro">Azure's palette is anchored in a spectrum of blues — from deep navy to electric sky — with purposeful accent colors. Click any swatch to copy the hex value.</p>
+
+    <!-- Usage spectrum -->
+    <div class="spectrum-bar">
+      <div class="spectrum-seg" style="flex: 40; background: #e5e7eb; color: #374151;">40% Neutrals & Lights</div>
+      <div class="spectrum-seg" style="flex: 40; background: var(--azure-blue);">40% Blues</div>
+      <div class="spectrum-seg" style="flex: 15; background: var(--bright-indigo);">15% Tertiary</div>
+      <div class="spectrum-seg" style="flex: 5; background: var(--fuschia);">5%</div>
+    </div>
+    <div class="usage-legend" style="margin-bottom: 2rem;">
+      <div class="usage-item"><div class="usage-dot" style="background:#e5e7eb;border:1px solid #ccc;"></div>40% Primary & secondary neutrals/lights</div>
+      <div class="usage-item"><div class="usage-dot" style="background:var(--azure-blue);"></div>40% Primary & secondary blues</div>
+      <div class="usage-item"><div class="usage-dot" style="background:var(--bright-indigo);"></div>15% Tertiary palette</div>
+      <div class="usage-item"><div class="usage-dot" style="background:var(--fuschia);"></div>5% Accents</div>
+    </div>
+
+    <div class="color-section-title">Primary Blues</div>
+    <div class="color-grid">
+      <div class="swatch" onclick="copyColor('#0078d4', 'Azure Blue')">
+        <div class="swatch-color" style="background:#0078d4;"></div>
+        <div class="swatch-info"><div class="swatch-name">Azure Blue</div><div class="swatch-hex">#0078d4<button class="copy-btn">copy</button></div></div>
+      </div>
+      <div class="swatch" onclick="copyColor('#0000b3', 'Energy Blue')">
+        <div class="swatch-color" style="background:#0000b3;"></div>
+        <div class="swatch-info"><div class="swatch-name">Energy Blue</div><div class="swatch-hex">#0000b3<button class="copy-btn">copy</button></div></div>
+      </div>
+      <div class="swatch" onclick="copyColor('#000085', 'Deep Blue')">
+        <div class="swatch-color" style="background:#000085;"></div>
+        <div class="swatch-info"><div class="swatch-name">Deep Blue</div><div class="swatch-hex">#000085<button class="copy-btn">copy</button></div></div>
+      </div>
+      <div class="swatch" onclick="copyColor('#0d0061', 'Navy Blue')">
+        <div class="swatch-color" style="background:#0d0061;"></div>
+        <div class="swatch-info"><div class="swatch-name">Navy Blue</div><div class="swatch-hex">#0d0061<button class="copy-btn">copy</button></div></div>
+      </div>
+      <div class="swatch" onclick="copyColor('#1a00e2', 'Electric Blue')">
+        <div class="swatch-color" style="background:#1a00e2;"></div>
+        <div class="swatch-info"><div class="swatch-name">Electric Blue</div><div class="swatch-hex">#1a00e2<button class="copy-btn">copy</button></div></div>
+      </div>
+    </div>
+
+    <div class="color-section-title">Secondary & Accent</div>
+    <div class="color-grid">
+      <div class="swatch" onclick="copyColor('#5d52ec', 'Bright Indigo')">
+        <div class="swatch-color" style="background:#5d52ec;"></div>
+        <div class="swatch-info"><div class="swatch-name">Bright Indigo</div><div class="swatch-hex">#5d52ec<button class="copy-btn">copy</button></div></div>
+      </div>
+      <div class="swatch" onclick="copyColor('#00bbc3', 'Turquoise')">
+        <div class="swatch-color" style="background:#00bbc3;"></div>
+        <div class="swatch-info"><div class="swatch-name">Turquoise</div><div class="swatch-hex">#00bbc3<button class="copy-btn">copy</button></div></div>
+      </div>
+      <div class="swatch" onclick="copyColor('#00ffff', 'Sky Blue')">
+        <div class="swatch-color" style="background:#00ffff; border-bottom: 1px solid #e5e7eb;"></div>
+        <div class="swatch-info"><div class="swatch-name">Sky Blue</div><div class="swatch-hex">#00ffff<button class="copy-btn">copy</button></div></div>
+      </div>
+      <div class="swatch" onclick="copyColor('#aac0fc', 'Lavender')">
+        <div class="swatch-color" style="background:#aac0fc;"></div>
+        <div class="swatch-info"><div class="swatch-name">Lavender</div><div class="swatch-hex">#aac0fc<button class="copy-btn">copy</button></div></div>
+      </div>
+      <div class="swatch" onclick="copyColor('#590055', 'Plum')">
+        <div class="swatch-color" style="background:#590055;"></div>
+        <div class="swatch-info"><div class="swatch-name">Plum</div><div class="swatch-hex">#590055<button class="copy-btn">copy</button></div></div>
+      </div>
+      <div class="swatch" onclick="copyColor('#d12aca', 'Fuschia')">
+        <div class="swatch-color" style="background:#d12aca;"></div>
+        <div class="swatch-info"><div class="swatch-name">Fuschia</div><div class="swatch-hex">#d12aca<button class="copy-btn">copy</button></div></div>
+      </div>
+    </div>
+
+    <div class="color-section-title">Neutrals & Lights</div>
+    <div class="color-grid">
+      <div class="swatch" onclick="copyColor('#ffffff', 'Pure White')">
+        <div class="swatch-color" style="background:#ffffff; border-bottom: 1px solid #e5e7eb;"></div>
+        <div class="swatch-info"><div class="swatch-name">Pure White</div><div class="swatch-hex">#ffffff<button class="copy-btn">copy</button></div></div>
+      </div>
+      <div class="swatch" onclick="copyColor('#d9d9d6', 'Light Gray')">
+        <div class="swatch-color" style="background:#d9d9d6;"></div>
+        <div class="swatch-info"><div class="swatch-name">Light Gray</div><div class="swatch-hex">#d9d9d6<button class="copy-btn">copy</button></div></div>
+      </div>
+      <div class="swatch" onclick="copyColor('#cff3e8', 'Mint')">
+        <div class="swatch-color" style="background:#cff3e8;"></div>
+        <div class="swatch-info"><div class="swatch-name">Mint</div><div class="swatch-hex">#cff3e8<button class="copy-btn">copy</button></div></div>
+      </div>
+      <div class="swatch" onclick="copyColor('#d4ec8e', 'Light Green')">
+        <div class="swatch-color" style="background:#d4ec8e;"></div>
+        <div class="swatch-info"><div class="swatch-name">Light Green</div><div class="swatch-hex">#d4ec8e<button class="copy-btn">copy</button></div></div>
+      </div>
+    </div>
+
+    <hr class="divider">
+    <h3 style="font-size:1rem; font-weight:600; margin-bottom: 0.25rem;">Recommended Color Pairings</h3>
+    <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:0;">Approved text-on-background combinations for type and line art.</p>
+    <div class="pairing-grid">
+      <div class="pairing-card">
+        <div class="pairing-preview" style="background:#0d0061; color:#fff;">Azure Blue on Navy</div>
+        <div class="pairing-meta"><strong>Dark background</strong>White or light type on Navy/Deep Blue</div>
+      </div>
+      <div class="pairing-card">
+        <div class="pairing-preview" style="background:#ffffff; color:#0078d4; border: 1px solid #e5e7eb;">Azure Blue on White</div>
+        <div class="pairing-meta"><strong>Light background</strong>Azure Blue text on white/light gray</div>
+      </div>
+      <div class="pairing-card">
+        <div class="pairing-preview" style="background:#000085; color:#00ffff;">Sky Blue on Deep Blue</div>
+        <div class="pairing-meta"><strong>Accent on dark</strong>Sky Blue or Turquoise on deep blue</div>
+      </div>
+      <div class="pairing-card">
+        <div class="pairing-preview" style="background:#0078d4; color:#ffffff;">White on Azure Blue</div>
+        <div class="pairing-meta"><strong>Reversed</strong>White type on Azure Blue backgrounds</div>
+      </div>
+      <div class="pairing-card">
+        <div class="pairing-preview" style="background:#ffffff; color:#5d52ec; border: 1px solid #e5e7eb;">Bright Indigo on White</div>
+        <div class="pairing-meta"><strong>Tertiary</strong>Indigo for wireframe lines on light backgrounds</div>
+      </div>
+      <div class="pairing-card">
+        <div class="pairing-preview" style="background:#0d0061; color:#aac0fc;">Lavender on Navy</div>
+        <div class="pairing-meta"><strong>Soft accent</strong>Lavender wireframe lines on dark navy</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ TYPOGRAPHY ═══ -->
+  <section id="typography">
+    <div class="section-eyebrow">05 — Typography</div>
+    <h2>Typography</h2>
+    <p class="section-intro">Azure's primary typeface is <strong>Segoe Sans Display</strong> — a sophisticated evolution of Segoe UI featuring technical capital letters and expressive flowing lowercase. Used across all marketing, advertising, and brand communications.</p>
+
+    <!-- Type specimen -->
+    <div class="type-specimen">
+      <div class="type-meta">
+        <div class="type-meta-item"><label>Typeface</label><span>Segoe Sans Display</span></div>
+        <div class="type-meta-item"><label>Use</label><span>Marketing & Brand</span></div>
+        <div class="type-meta-item"><label>Case</label><span>Sentence case (headlines) · ALL CAPS (eyebrows)</span></div>
+      </div>
+      <div class="type-sample-subhead">Build in Public — Innovation</div>
+      <div class="type-sample-xl">Build the systems<br>of tomorrow</div>
+      <div class="type-sample-body">Microsoft Azure photography is comprised of seven categories. Each category thematically emphasizes one or multiple Azure brand design principles. The world of Azure is rich in activity and detail, taking place in both physical and conceptual spaces.</div>
+    </div>
+
+    <!-- Weights table -->
+    <h3 style="font-size:0.95rem; font-weight:700; margin-bottom:1rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-secondary);">Segoe Sans Display Weights</h3>
+    <div class="card" style="padding: 0; overflow: hidden; margin-bottom: 1.5rem;">
+      <table class="weight-table" style="width:100%;">
+        <tbody>
+          <tr><td>Hairline</td><td class="w-100">AaBbCcDd 1234</td><td>100</td></tr>
+          <tr><td>Thin</td><td class="w-200">AaBbCcDd 1234</td><td>200</td></tr>
+          <tr><td>Light</td><td class="w-300">AaBbCcDd 1234</td><td>300</td></tr>
+          <tr><td>Semilight</td><td class="w-350">AaBbCcDd 1234</td><td>350</td></tr>
+          <tr><td>Display (Regular)</td><td class="w-400">AaBbCcDd 1234</td><td>400</td></tr>
+          <tr><td>Semibold</td><td class="w-600">AaBbCcDd 1234</td><td>600</td></tr>
+          <tr><td>Bold</td><td class="w-700">AaBbCcDd 1234</td><td>700</td></tr>
+          <tr><td>Extrabold</td><td class="w-800">AaBbCcDd 1234</td><td>800</td></tr>
+          <tr><td>Black</td><td class="w-900">AaBbCcDd 1234</td><td>900</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Hierarchy -->
+    <h3 style="font-size:0.95rem; font-weight:700; margin-bottom:0.5rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-secondary);">Typography Hierarchy</h3>
+    <div class="card-grid card-grid-2" style="margin-bottom: 1.5rem;">
+      <div class="card">
+        <div class="card-title">Headlines</div>
+        <p style="margin-bottom:0.75rem;"><strong>Large:</strong> Segoe Sans Display Semilight · Sentence case</p>
+        <p style="margin-bottom:0.75rem;"><strong>Medium/Small:</strong> Segoe Sans Display Regular · Sentence case</p>
+        <p><strong>Subheadlines & Eyebrows:</strong> Segoe Sans Display Semibold · ALL CAPS · generous tracking</p>
+      </div>
+      <div class="card">
+        <div class="card-title">Body & Supporting</div>
+        <p style="margin-bottom:0.75rem;"><strong>Body copy:</strong> Segoe Sans Display Regular · Sentence case</p>
+        <p style="margin-bottom:0.75rem;"><strong>URLs:</strong> Segoe Sans Display Semibold · Sentence case</p>
+        <p><strong>Type-as-texture:</strong> Extralight/Light/Thin/Semilight · capitalized · used sparingly in ads and social</p>
+      </div>
+    </div>
+
+    <!-- Type scales -->
+    <h3 style="font-size:0.95rem; font-weight:700; margin-bottom:0.5rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-secondary);">Marketing Type Scale</h3>
+    <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom: 0;">For social posts and display ads — ensures balanced proportions at each layout size.</p>
+    <div class="type-scale-grid">
+      <div class="type-scale-row">
+        <span class="scale-label">Scale 1</span>
+        <span class="scale-sample" style="font-size:2.25rem; line-height:1.05;">Build the future</span>
+        <span class="scale-spec">164pt · tracking −25 · leading 174</span>
+      </div>
+      <div class="type-scale-row">
+        <span class="scale-label">Scale 2</span>
+        <span class="scale-sample" style="font-size:1.75rem; line-height:1.05;">Build the future</span>
+        <span class="scale-spec">128pt · tracking −20 · leading 136</span>
+      </div>
+      <div class="type-scale-row">
+        <span class="scale-label">Scale 3</span>
+        <span class="scale-sample" style="font-size:1.35rem; line-height:1.07;">Build the future</span>
+        <span class="scale-spec">98pt · tracking −15 · leading 106</span>
+      </div>
+      <div class="type-scale-row">
+        <span class="scale-label">Scale 4</span>
+        <span class="scale-sample" style="font-size:1rem; line-height:1.1;">Build the future</span>
+        <span class="scale-spec">72pt · tracking −10 · leading 88 · Semibold</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PHOTOGRAPHY ═══ -->
+  <section id="photography" style="background:#fff;">
+    <div class="section-eyebrow">06 — Photography</div>
+    <h2>Photography Guidelines</h2>
+    <p class="section-intro">Azure photography spans seven categories. Each emphasizes one or more design principles — prioritizing authenticity, immersion, and technical expertise over staged stock imagery.</p>
+    <div class="photo-cat-grid">
+
+      <div class="photo-cat-card">
+        <div class="photo-cat-header" style="background: linear-gradient(135deg, #0d0061, #0078d4);">
+          <span>Developers</span>
+        </div>
+        <div class="photo-cat-body">
+          <p>Authentic, immersive shots of developers in focused work. Avoid staged studio shots. Subjects should appear natural, relaxed, and confident — cropped intimately using the Immersion principle.</p>
+          <div class="photo-tags">
+            <span class="tag">Immersive crops</span>
+            <span class="tag">Focused expression</span>
+            <span class="tag">Hint of code on screen</span>
+            <span class="tag green">Authentic styling</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="photo-cat-card">
+        <div class="photo-cat-header" style="background: linear-gradient(135deg, #000085, #5d52ec);">
+          <span>IT Decision Makers</span>
+        </div>
+        <div class="photo-cat-body">
+          <p>Professional expertise and optimism. ITDM audience seen in clean, open, naturally-lit environments. Business casual attire. Moments of collaboration or deep work.</p>
+          <div class="photo-tags">
+            <span class="tag purple">Natural expression</span>
+            <span class="tag">Workplace setting</span>
+            <span class="tag green">Business casual</span>
+            <span class="tag">Collaborative body language</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="photo-cat-card">
+        <div class="photo-cat-header" style="background: linear-gradient(135deg, #590055, #d12aca);">
+          <span>Industries: People Focus</span>
+        </div>
+        <div class="photo-cat-body">
+          <p>Azure serves healthcare, finance, retail, manufacturing, education, and more. Shots are graphic, striking, with attention to detail — featuring people working alone or collaborating.</p>
+          <div class="photo-tags">
+            <span class="tag red">Graphic & striking</span>
+            <span class="tag">Detail & contrast</span>
+            <span class="tag">Innovative environment</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="photo-cat-card">
+        <div class="photo-cat-header" style="background: linear-gradient(135deg, #00bbc3, #0078d4);">
+          <span>Industries: Graphic Details</span>
+        </div>
+        <div class="photo-cat-body">
+          <p>Tech-focused close-up shots of partner technology. Dynamic lighting, crisp and clean. Flexible on camera depth of field and point of view to highlight innovation.</p>
+          <div class="photo-tags">
+            <span class="tag">Tech-focused</span>
+            <span class="tag">Dynamic lighting</span>
+            <span class="tag green">Crisp & modern</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="photo-cat-card">
+        <div class="photo-cat-header" style="background: linear-gradient(135deg, #111827, #374151);">
+          <span>Data Centers: Exterior</span>
+        </div>
+        <div class="photo-cat-body">
+          <p>Billion-dollar facilities shown with the scale of vast spaces. Should appear modern, premium, and state-of-the-art — reinforcing the Infinite design principle.</p>
+          <div class="photo-tags">
+            <span class="tag">Vast scale</span>
+            <span class="tag">Premium & modern</span>
+            <span class="tag purple">Infinite principle</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="photo-cat-card">
+        <div class="photo-cat-header" style="background: linear-gradient(135deg, #0078d4, #00bbc3);">
+          <span>Data Centers: Interior & Details</span>
+        </div>
+        <div class="photo-cat-body">
+          <p>Interior shots emphasize computing power and infinite development possibilities. Detail shots use macro and close-up views to highlight hardware precision and the Curious principle.</p>
+          <div class="photo-tags">
+            <span class="tag">Computing power</span>
+            <span class="tag green">Macro & close-up</span>
+            <span class="tag purple">Curious principle</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="divider">
+    <h3 style="font-size:0.95rem;font-weight:600;margin-bottom:0.75rem;">Key Photography Don'ts</h3>
+    <div class="card-grid card-grid-3">
+      <div class="card">
+        <div class="card-title" style="color:#be123c;">✗ Avoid</div>
+        <p>Overly posed models in a studio setting with dramatic or colored lighting</p>
+      </div>
+      <div class="card">
+        <div class="card-title" style="color:#be123c;">✗ Avoid</div>
+        <p>Obvious stock photography aesthetics — glossy wardrobes and brand-new gear</p>
+      </div>
+      <div class="card">
+        <div class="card-title" style="color:#be123c;">✗ Avoid</div>
+        <p>Showing specific code or proprietary technology that limits application breadth</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ GRAPHIC LANGUAGE ═══ -->
+  <section id="graphic-language">
+    <div class="section-eyebrow">07 — Graphic Language</div>
+    <h2>Building Blocks</h2>
+    <p class="section-intro">Azure's graphic language uses wireframe and solid 3D shapes as building blocks for large system compositions. Wireframes convey technical precision; solid 3D shapes express optimism and momentum.</p>
+
+    <div class="card-grid card-grid-2" style="margin-bottom:2rem;">
+      <div class="card" style="background: linear-gradient(135deg, #0d0061 0%, #0078d4 100%); border-color: transparent;">
+        <div class="card-title" style="color:rgba(255,255,255,0.6);">Solid 3D Shapes</div>
+        <p style="color:rgba(255,255,255,0.8);">Used for optimistic, expressive brand moments. Appear at large scale (gloss texture) and small scale (matte texture). Exclusively sourced from Microsoft's approved library.</p>
+      </div>
+      <div class="card" style="background: #000085; border-color: transparent;">
+        <div class="card-title" style="color:rgba(255,255,255,0.6);">Wireframes</div>
+        <p style="color:rgba(255,255,255,0.8);">Express technical precision, planning, and architecting development systems. Appear solo or paired with 3D shapes. Orient to a path when multiple wireframes appear together.</p>
+      </div>
+    </div>
+
+    <!-- 3D Shape Gloss Colors -->
+    <h3 class="color-section-title">3D Shapes — Gloss Texture Colors</h3>
+    <div class="color-grid" style="margin-bottom: 1.5rem;">
+      <div class="swatch" onclick="copyColor('#0000b3','Energy Blue')"><div class="swatch-color" style="background:#0000b3;"></div><div class="swatch-info"><div class="swatch-name">Energy Blue</div><div class="swatch-hex">#0000b3<button class="copy-btn">copy</button></div></div></div>
+      <div class="swatch" onclick="copyColor('#ffffff','Pure White')"><div class="swatch-color" style="background:#ffffff;border-bottom:1px solid #e5e7eb;"></div><div class="swatch-info"><div class="swatch-name">Pure White</div><div class="swatch-hex">#ffffff<button class="copy-btn">copy</button></div></div></div>
+      <div class="swatch" onclick="copyColor('#5d52ec','Bright Indigo')"><div class="swatch-color" style="background:#5d52ec;"></div><div class="swatch-info"><div class="swatch-name">Bright Indigo</div><div class="swatch-hex">#5d52ec<button class="copy-btn">copy</button></div></div></div>
+      <div class="swatch" onclick="copyColor('#0078d4','Blue')"><div class="swatch-color" style="background:#0078d4;"></div><div class="swatch-info"><div class="swatch-name">Blue</div><div class="swatch-hex">#0078d4<button class="copy-btn">copy</button></div></div></div>
+      <div class="swatch" onclick="copyColor('#00ffff','Sky Blue')"><div class="swatch-color" style="background:#00ffff;border-bottom:1px solid #e5e7eb;"></div><div class="swatch-info"><div class="swatch-name">Sky Blue</div><div class="swatch-hex">#00ffff<button class="copy-btn">copy</button></div></div></div>
+      <div class="swatch" onclick="copyColor('#cff3e8','Mint')"><div class="swatch-color" style="background:#cff3e8;"></div><div class="swatch-info"><div class="swatch-name">Mint</div><div class="swatch-hex">#cff3e8<button class="copy-btn">copy</button></div></div></div>
+    </div>
+
+    <!-- 3D Shape Matte Colors -->
+    <h3 class="color-section-title">3D Shapes — Matte Texture Colors</h3>
+    <div class="color-grid" style="margin-bottom: 2rem;">
+      <div class="swatch" onclick="copyColor('#000085','Deep Blue')"><div class="swatch-color" style="background:#000085;"></div><div class="swatch-info"><div class="swatch-name">Deep Blue</div><div class="swatch-hex">#000085<button class="copy-btn">copy</button></div></div></div>
+      <div class="swatch" onclick="copyColor('#0d0061','Navy Blue')"><div class="swatch-color" style="background:#0d0061;"></div><div class="swatch-info"><div class="swatch-name">Navy Blue</div><div class="swatch-hex">#0d0061<button class="copy-btn">copy</button></div></div></div>
+      <div class="swatch" onclick="copyColor('#d9d9d6','Light Gray')"><div class="swatch-color" style="background:#d9d9d6;"></div><div class="swatch-info"><div class="swatch-name">Light Gray</div><div class="swatch-hex">#d9d9d6<button class="copy-btn">copy</button></div></div></div>
+      <div class="swatch" onclick="copyColor('#00bbc3','Turquoise')"><div class="swatch-color" style="background:#00bbc3;"></div><div class="swatch-info"><div class="swatch-name">Turquoise</div><div class="swatch-hex">#00bbc3<button class="copy-btn">copy</button></div></div></div>
+      <div class="swatch" onclick="copyColor('#aac0fc','Lavender')"><div class="swatch-color" style="background:#aac0fc;"></div><div class="swatch-info"><div class="swatch-name">Lavender</div><div class="swatch-hex">#aac0fc<button class="copy-btn">copy</button></div></div></div>
+      <div class="swatch" onclick="copyColor('#590055','Plum')"><div class="swatch-color" style="background:#590055;"></div><div class="swatch-info"><div class="swatch-name">Plum</div><div class="swatch-hex">#590055<button class="copy-btn">copy</button></div></div></div>
+      <div class="swatch" onclick="copyColor('#d12aca','Fuschia')"><div class="swatch-color" style="background:#d12aca;"></div><div class="swatch-info"><div class="swatch-name">Fuschia</div><div class="swatch-hex">#d12aca<button class="copy-btn">copy</button></div></div></div>
+      <div class="swatch" onclick="copyColor('#d4ec8e','Light Green')"><div class="swatch-color" style="background:#d4ec8e;"></div><div class="swatch-info"><div class="swatch-name">Light Green</div><div class="swatch-hex">#d4ec8e<button class="copy-btn">copy</button></div></div></div>
+    </div>
+
+    <!-- Wireframe shapes -->
+    <h3 style="font-size:0.95rem; font-weight:700; margin-bottom:0.25rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-secondary);">Available Wireframe Shapes</h3>
+    <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom: 1rem;">3D wireframe assets must be sourced exclusively from Microsoft's approved collection to ensure brand consistency.</p>
+    <div class="shapes-grid">
+      <div class="shape-chip"><div class="shape-visual"><svg viewBox="0 0 48 48" width="40" height="40"><circle cx="24" cy="24" r="18" fill="none" stroke="#0078d4" stroke-width="2"/></svg></div><div class="shape-name">Circle</div></div>
+      <div class="shape-chip"><div class="shape-visual"><svg viewBox="0 0 48 48" width="40" height="40"><polygon points="24,6 42,42 6,42" fill="none" stroke="#0078d4" stroke-width="2"/></svg></div><div class="shape-name">Cone</div></div>
+      <div class="shape-chip"><div class="shape-visual"><svg viewBox="0 0 48 48" width="40" height="40"><rect x="10" y="10" width="28" height="28" fill="none" stroke="#0078d4" stroke-width="2"/><polygon points="10,10 20,6 38,6 28,10" fill="none" stroke="#0078d4" stroke-width="2"/><line x1="38" y1="6" x2="38" y2="34" stroke="#0078d4" stroke-width="2"/><line x1="38" y1="34" x2="28" y2="38" stroke="#0078d4" stroke-width="2"/><line x1="28" y1="38" x2="10" y2="38" stroke="#0078d4" stroke-width="2"/></svg></div><div class="shape-name">Cube</div></div>
+      <div class="shape-chip"><div class="shape-visual"><svg viewBox="0 0 48 48" width="40" height="40"><ellipse cx="24" cy="12" rx="12" ry="5" fill="none" stroke="#0078d4" stroke-width="2"/><ellipse cx="24" cy="36" rx="12" ry="5" fill="none" stroke="#0078d4" stroke-width="2"/><line x1="12" y1="12" x2="12" y2="36" stroke="#0078d4" stroke-width="2"/><line x1="36" y1="12" x2="36" y2="36" stroke="#0078d4" stroke-width="2"/></svg></div><div class="shape-name">Cylinder</div></div>
+      <div class="shape-chip"><div class="shape-visual"><svg viewBox="0 0 48 48" width="40" height="40"><polygon points="24,4 44,16 40,38 8,38 4,16" fill="none" stroke="#0078d4" stroke-width="2"/></svg></div><div class="shape-name">Pentagon</div></div>
+      <div class="shape-chip"><div class="shape-visual"><svg viewBox="0 0 48 48" width="40" height="40"><ellipse cx="24" cy="24" rx="18" ry="10" fill="none" stroke="#0078d4" stroke-width="2"/></svg></div><div class="shape-name">Ellipse</div></div>
+      <div class="shape-chip"><div class="shape-visual"><svg viewBox="0 0 48 48" width="40" height="40"><circle cx="24" cy="24" r="18" fill="none" stroke="#0078d4" stroke-width="2"/><polygon points="24,6 42,36 6,36" fill="none" stroke="#0078d4" stroke-width="1.5" stroke-dasharray="3,2"/></svg></div><div class="shape-name">Icosahedron</div></div>
+      <div class="shape-chip"><div class="shape-visual"><svg viewBox="0 0 48 48" width="40" height="40"><polygon points="24,6 42,24 24,42 6,24" fill="none" stroke="#0078d4" stroke-width="2"/></svg></div><div class="shape-name">Octahedron</div></div>
+      <div class="shape-chip"><div class="shape-visual"><svg viewBox="0 0 48 48" width="40" height="40"><rect x="8" y="14" width="32" height="20" rx="10" fill="none" stroke="#0078d4" stroke-width="2"/></svg></div><div class="shape-name">Pill</div></div>
+      <div class="shape-chip"><div class="shape-visual"><svg viewBox="0 0 48 48" width="40" height="40"><polygon points="24,6 42,42 6,42" fill="none" stroke="#0078d4" stroke-width="2"/><line x1="6" y1="42" x2="42" y2="42" stroke="#0078d4" stroke-width="2"/></svg></div><div class="shape-name">Pyramid</div></div>
+      <div class="shape-chip"><div class="shape-visual"><svg viewBox="0 0 48 48" width="40" height="40"><rect x="8" y="12" width="32" height="24" fill="none" stroke="#0078d4" stroke-width="2"/></svg></div><div class="shape-name">Rectangle</div></div>
+      <div class="shape-chip"><div class="shape-visual"><svg viewBox="0 0 48 48" width="40" height="40"><circle cx="24" cy="24" r="18" fill="none" stroke="#0078d4" stroke-width="2"/><ellipse cx="24" cy="24" rx="18" ry="8" fill="none" stroke="#0078d4" stroke-width="1.5" stroke-dasharray="3,2"/></svg></div><div class="shape-name">Sphere</div></div>
+      <div class="shape-chip"><div class="shape-visual"><svg viewBox="0 0 48 48" width="40" height="40"><rect x="8" y="14" width="32" height="20" rx="8" fill="none" stroke="#0078d4" stroke-width="2"/><line x1="16" y1="14" x2="16" y2="34" stroke="#0078d4" stroke-width="1.5"/><line x1="32" y1="14" x2="32" y2="34" stroke="#0078d4" stroke-width="1.5"/></svg></div><div class="shape-name">Stadium</div></div>
+      <div class="shape-chip"><div class="shape-visual"><svg viewBox="0 0 48 48" width="40" height="40"><polygon points="24,6 42,38 6,38" fill="none" stroke="#0078d4" stroke-width="2"/><polygon points="24,20 36,38 12,38" fill="none" stroke="#0078d4" stroke-width="1.5" stroke-dasharray="3,2"/></svg></div><div class="shape-name">Tetrahedron</div></div>
+      <div class="shape-chip"><div class="shape-visual"><svg viewBox="0 0 48 48" width="40" height="40"><polygon points="24,6 38,14 44,30 34,42 14,42 4,30 10,14" fill="none" stroke="#0078d4" stroke-width="2"/></svg></div><div class="shape-name">Dodecahedron</div></div>
+    </div>
+
+    <!-- Wireframe colors -->
+    <h3 class="color-section-title" style="margin-top:2rem;">Wireframe Approved Colors</h3>
+    <div class="wireframe-colors">
+      <div class="wire-chip"><div class="wire-dot" style="background:#1a00e2;"></div>Electric Blue #1a00e2</div>
+      <div class="wire-chip"><div class="wire-dot" style="background:#000085;"></div>Deep Blue #000085</div>
+      <div class="wire-chip"><div class="wire-dot" style="background:#00bbc3;"></div>Turquoise #00bbc3</div>
+      <div class="wire-chip"><div class="wire-dot" style="background:#5d52ec;"></div>Bright Indigo #5d52ec</div>
+      <div class="wire-chip"><div class="wire-dot" style="background:#590055;"></div>Plum #590055</div>
+      <div class="wire-chip"><div class="wire-dot" style="background:#d12aca;"></div>Fuschia #d12aca</div>
+      <div class="wire-chip"><div class="wire-dot" style="background:#0078d4;"></div>Azure Blue #0078d4</div>
+    </div>
+
+    <!-- 3D Scene Themes -->
+    <hr class="divider">
+    <h3 style="font-size:0.95rem; font-weight:700; margin-bottom:0.25rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-secondary);">3D Scene Themes</h3>
+    <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom: 1rem;">Official 3D scene compositions — always used as selective crops, not full-frame views. Light mode is primary.</p>
+    <div class="card-grid card-grid-4">
+      <div class="card" style="border-top: 3px solid var(--azure-blue);">
+        <div class="card-title">Hero Artwork</div>
+        <p>Top-level brand identity scenes for campaign covers and hero banners.</p>
+      </div>
+      <div class="card" style="border-top: 3px solid var(--turquoise);">
+        <div class="card-title">Data Platform</div>
+        <p>Data flow and architecture compositions for data services messaging.</p>
+      </div>
+      <div class="card" style="border-top: 3px solid var(--bright-indigo);">
+        <div class="card-title">AI Platform</div>
+        <p>AI-specific building block scenes for Azure AI and Copilot communications.</p>
+      </div>
+      <div class="card" style="border-top: 3px solid var(--energy-blue);">
+        <div class="card-title">Infrastructure</div>
+        <p>Large-scale computing infrastructure and cloud architecture themes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ HOLDING SHAPES ═══ -->
+  <section id="holding-shapes" style="background:#fff;">
+    <div class="section-eyebrow">07 — Graphic Language</div>
+    <h2>Holding Shapes</h2>
+    <p class="section-intro">Rounded corner UI containers used to crop photography and 3D scenes. They add immersion by zooming into compelling focal areas rather than showing a full image. Shapes must always align to 90° angles.</p>
+
+    <div class="card-grid card-grid-3" style="margin-bottom:2rem;">
+      <div class="card" style="border-left: 3px solid var(--azure-blue);">
+        <div class="card-title">Construction Rule</div>
+        <p>Round corners until one edge becomes a perfect semi-circle — no flat segments on the short sides. Then use the shape to crop the image.</p>
+      </div>
+      <div class="card" style="border-left: 3px solid var(--bright-indigo);">
+        <div class="card-title">Sizing Ratios</div>
+        <p>Follow estimated length-to-width ratios. Avoid shapes that are too narrow, form a perfect circle, or use non-standard angles.</p>
+      </div>
+      <div class="card" style="border-left: 3px solid var(--turquoise);">
+        <div class="card-title">Montage Format</div>
+        <p>Multiple images can be combined in a larger holding shape. Ensure visible division between images and sufficient contrast with the background color.</p>
+      </div>
+    </div>
+
+    <!-- Visual demos -->
+    <div class="holding-demo">
+      <div>
+        <div style="width: 100%; height: 140px; background: linear-gradient(135deg, #0d0061, #0078d4); border-radius: 9999px; display:flex; align-items:center; justify-content:center;">
+          <span style="color:rgba(255,255,255,0.5);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;">Vertical</span>
+        </div>
+        <div class="holding-shape-label">Vertical (primary)</div>
+      </div>
+      <div>
+        <div style="width:100%; height: 90px; background: linear-gradient(135deg, #000085, #5d52ec); border-radius: 9999px; margin-top: 25px; display:flex; align-items:center; justify-content:center;">
+          <span style="color:rgba(255,255,255,0.5);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;">Horizontal</span>
+        </div>
+        <div class="holding-shape-label">Horizontal</div>
+      </div>
+      <div>
+        <div style="width:100%; height: 140px; background: linear-gradient(135deg, #590055, #d12aca); border-radius: 9999px; overflow:hidden; display:flex; align-items:center; justify-content:center;">
+          <span style="color:rgba(255,255,255,0.5);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;">Montage</span>
+        </div>
+        <div class="holding-shape-label">Montage (multi-image)</div>
+      </div>
+      <div>
+        <div style="display: flex; gap: 6px; height: 140px;">
+          <div style="flex:1; background: linear-gradient(135deg, #0078d4, #00bbc3); border-radius: 9999px;"></div>
+          <div style="flex:1; background: linear-gradient(135deg, #000085, #0078d4); border-radius: 9999px; margin-top: 20px;"></div>
+        </div>
+        <div class="holding-shape-label">Ascending/descending pair</div>
+      </div>
+    </div>
+
+    <hr class="divider">
+    <h3 style="font-size:0.9rem; font-weight:600; margin-bottom:0.875rem; color:#be123c;">Holding Shape — What to Avoid</h3>
+    <div class="card-grid card-grid-4">
+      <div class="card"><div class="card-title" style="color:#be123c;">✗ Too narrow</div><p>Holding shapes that are excessively long and narrow lose the rounded end effect.</p></div>
+      <div class="card"><div class="card-title" style="color:#be123c;">✗ Perfect circle</div><p>A holding shape should never become a perfect circle — ratio must be elongated.</p></div>
+      <div class="card"><div class="card-title" style="color:#be123c;">✗ Custom shapes</div><p>Only use approved holding shape constructions — no custom organic or irregular shapes.</p></div>
+      <div class="card"><div class="card-title" style="color:#be123c;">✗ Non-90° angles</div><p>Holding shapes must always be aligned to 90° angles. Diagonal orientations are off-brand.</p></div>
+    </div>
+  </section>
+
+  <!-- ═══ TEXTURE BACKGROUNDS ═══ -->
+  <section id="textures">
+    <div class="section-eyebrow">07 — Graphic Language</div>
+    <h2>Texture Backgrounds</h2>
+    <p class="section-intro">Four families of digital texture backgrounds — each available in Light, Midtone, and Dark variants — extend the graphic language for digital layouts.</p>
+    <div class="texture-grid">
+      <div class="texture-card">
+        <div class="texture-preview" style="background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,120,212,0.08) 3px, rgba(0,120,212,0.08) 4px), repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(0,120,212,0.08) 3px, rgba(0,120,212,0.08) 4px); background-color: #f0f5ff;"></div>
+        <div class="texture-card-name">Screen Texture</div>
+        <div class="texture-variants">Light · Midtone · Dark</div>
+      </div>
+      <div class="texture-card">
+        <div class="texture-preview" style="background: radial-gradient(circle at 20% 50%, rgba(0,120,212,0.15) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(93,82,236,0.15) 0%, transparent 50%); background-color: #f0f5ff;"></div>
+        <div class="texture-card-name">Digital Texture</div>
+        <div class="texture-variants">Light · Midtone · Dark</div>
+      </div>
+      <div class="texture-card">
+        <div class="texture-preview" style="background: linear-gradient(135deg, rgba(0,255,255,0.1) 25%, transparent 25%, transparent 50%, rgba(0,255,255,0.1) 50%, rgba(0,255,255,0.1) 75%, transparent 75%); background-size: 8px 8px; background-color: #e8f4ff;"></div>
+        <div class="texture-card-name">Hologram Texture</div>
+        <div class="texture-variants">Light · Midtone · Dark</div>
+      </div>
+      <div class="texture-card">
+        <div class="texture-preview" style="background: repeating-linear-gradient(45deg, rgba(0,120,212,0.06) 0px, rgba(0,120,212,0.06) 1px, transparent 1px, transparent 8px); background-color: #f4f6f9;"></div>
+        <div class="texture-card-name">Dither Texture</div>
+        <div class="texture-variants">Light · Midtone · Dark</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ LAYOUTS ═══ -->
+  <section id="layouts" style="background:#fff;">
+    <div class="section-eyebrow">07 — Graphic Language</div>
+    <h2>Design Layouts</h2>
+    <p class="section-intro">Two tiers of layout emphasis guide how brand and content are balanced. Lead with Primary layouts on covers, social, and top-of-funnel attract moments. Use Secondary layouts for supporting content.</p>
+
+    <h3 style="font-size:0.9rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--azure-blue); margin-bottom:1rem;">Primary Visual Emphasis</h3>
+    <div class="layout-grid" style="margin-bottom:2rem;">
+      <div class="layout-card"><div class="layout-thumb" style="background:linear-gradient(135deg,#0d0061,#0078d4);">Holding Shape: Vertical</div><div class="layout-name">Holding Shape: Vertical</div><div class="layout-desc">Vertical pill crop of photography or 3D scene as hero focal point.</div></div>
+      <div class="layout-card"><div class="layout-thumb" style="background:linear-gradient(45deg,#000085,#5d52ec);">Montage</div><div class="layout-name">Montage Holding Shape</div><div class="layout-desc">Multi-image cropped into a single holding shape to tell development stories.</div></div>
+      <div class="layout-card"><div class="layout-thumb" style="background:linear-gradient(135deg,#0078d4,#00bbc3);">3D Collage</div><div class="layout-name">Building Blocks Collage</div><div class="layout-desc">Collection of 3D shapes arranged to suggest a complex, evolving system.</div></div>
+      <div class="layout-card"><div class="layout-thumb" style="background:linear-gradient(135deg,#590055,#d12aca);">Depth Type</div><div class="layout-name">Depth Type</div><div class="layout-desc">Short 1–2 word headline immersed in 3D building blocks (behind and in front).</div></div>
+      <div class="layout-card"><div class="layout-thumb" style="background:linear-gradient(135deg,#0d0061,#1a00e2);">50/50 Headline</div><div class="layout-name">50/50 Large Headline</div><div class="layout-desc">Split layout with large headline type occupying half the canvas.</div></div>
+      <div class="layout-card"><div class="layout-thumb" style="background:linear-gradient(135deg,#000085,#0078d4);">Type Texture</div><div class="layout-name">Type as Texture</div><div class="layout-desc">Capitalized "AZURE" in a thin weight fills the background as atmospheric texture.</div></div>
+    </div>
+
+    <h3 style="font-size:0.9rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-secondary); margin-bottom:1rem;">Secondary Visual Emphasis</h3>
+    <div class="layout-grid">
+      <div class="layout-card"><div class="layout-thumb" style="background:#f0f5ff; border:1px solid var(--border);">Macro Wireframe</div><div class="layout-name">Macro Wireframe: Cropped</div><div class="layout-desc">Large-scale wireframe element crops into the layout as a graphic background.</div></div>
+      <div class="layout-card"><div class="layout-thumb" style="background:#f4f6f9; border:1px solid var(--border);">3D Scene Crop</div><div class="layout-name">3D Scene Vertical Crop</div><div class="layout-desc">3D scene appears as a narrow vertical panel alongside body content.</div></div>
+      <div class="layout-card"><div class="layout-thumb" style="background:#f0f5ff; border:1px solid var(--border);">Repeating 2D</div><div class="layout-name">Repeating 2D Building Blocks</div><div class="layout-desc">Pattern of 2D block silhouettes tiled as a textural background layer.</div></div>
+      <div class="layout-card"><div class="layout-thumb" style="background:#f4f6f9; border:1px solid var(--border);">Hardware BG</div><div class="layout-name">Hardware-Based Background</div><div class="layout-desc">Data center / server hardware photography used as a full bleed background.</div></div>
+      <div class="layout-card"><div class="layout-thumb" style="background:#f0f5ff; border:1px solid var(--border);">Binary Pattern</div><div class="layout-name">Binary Pattern Background</div><div class="layout-desc">Binary code / data stream pattern as a subtle technical background texture.</div></div>
+      <div class="layout-card"><div class="layout-thumb" style="background:#f4f6f9; border:1px solid var(--border);">Repeating & Rising</div><div class="layout-name">Repeating & Rising Shape</div><div class="layout-desc">Ascending series of repeating shapes expressing growth and forward momentum.</div></div>
+    </div>
+
+    <hr class="divider">
+    <h3 style="font-size:0.9rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-secondary); margin-bottom:0.5rem;">Marketing Funnel Guidance</h3>
+    <div class="card-grid card-grid-4">
+      <div class="card" style="border-top:3px solid var(--azure-blue);">
+        <div class="card-title">Attract</div>
+        <p>Top-level brand communications — social post copy, carousel first frame, ebook cover. Pique curiosity with Primary layouts.</p>
+      </div>
+      <div class="card" style="border-top:3px solid #93c5fd;">
+        <div class="card-title">Inform</div>
+        <p>Web pages, carousel inner frames, ebook interiors. More copy allowed. Use Secondary layouts.</p>
+      </div>
+      <div class="card" style="border-top:3px solid var(--turquoise);">
+        <div class="card-title">Convert</div>
+        <p>Product detail pages and CTAs. Combine brand visuals with specific product benefit messaging.</p>
+      </div>
+      <div class="card" style="border-top:3px solid var(--bright-indigo);">
+        <div class="card-title">Engage</div>
+        <p>Community, developer content, events. Emphasize Authentic and Curious principles.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ RESOURCES ═══ -->
+  <section id="resources">
+    <div class="section-eyebrow">Reference</div>
+    <h2>Resources & Assets</h2>
+    <p class="section-intro">All official Azure brand assets are hosted on Microsoft Brand Central. Access requires a Microsoft account. Contact your Microsoft partner lead for licensing questions.</p>
+    <div class="resources-grid">
+      <div class="resource-card"><div class="resource-icon">🔷</div><div class="resource-text"><h4>Wireframe Library</h4><p>Official 3D wireframe building block assets in all approved shapes and colors.</p></div></div>
+      <div class="resource-card"><div class="resource-icon">🔵</div><div class="resource-text"><h4>3D Shapes Library</h4><p>Gloss and matte 3D shape assets for use in design layouts. Exclusively source from here.</p></div></div>
+      <div class="resource-card"><div class="resource-icon">🎨</div><div class="resource-text"><h4>Color Libraries</h4><p>Pre-built Azure color swatches for Figma, Adobe, and PowerPoint.</p></div></div>
+      <div class="resource-card"><div class="resource-icon">🖼️</div><div class="resource-text"><h4>3D Illustrations & Illcons</h4><p>Ready-made 3D illustration sets and icon-scale 3D shapes for product pages.</p></div></div>
+      <div class="resource-card"><div class="resource-icon">📄</div><div class="resource-text"><h4>PowerPoint Template</h4><p>Branded Azure PowerPoint template with all layout styles pre-built.</p></div></div>
+      <div class="resource-card"><div class="resource-icon">🎬</div><div class="resource-text"><h4>Motion Toolkit</h4><p>Animation and motion guidelines plus pre-built motion templates.</p></div></div>
+      <div class="resource-card"><div class="resource-icon">📚</div><div class="resource-text"><h4>E-Book Templates</h4><p>Formatted e-book layouts with Azure visual language applied throughout.</p></div></div>
+      <div class="resource-card"><div class="resource-icon">📦</div><div class="resource-text"><h4>Grab-n-Go Library</h4><p>Pre-built social and digital ad assets ready for immediate deployment.</p></div></div>
+      <div class="resource-card"><div class="resource-icon">🏷️</div><div class="resource-text"><h4>Logos</h4><p>Full resolution Azure logo package — all variations, formats, and color modes.</p></div></div>
+    </div>
+
+    <div class="card" style="margin-top:1.5rem; background: linear-gradient(135deg, #0d0061, #000085); border-color: transparent;">
+      <p style="color: rgba(255,255,255,0.75); font-size: 0.9rem; line-height: 1.7;">
+        <strong style="color:#fff;">Brand Central Access:</strong> Download assets at <span style="color: var(--sky-blue);">brandcentral.microsoft.com</span> (requires Microsoft account). For questions, visit the Help Center or contact your Microsoft partner lead. Note: This document references the April 2026 Visual Brand Expression guidance — marked <em>Confidential</em> by Microsoft. For Red Door internal reference use only.
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <strong>Microsoft Azure Brand Library</strong> · Compiled by Red Door Collaborative · April 2026
+    </div>
+    <div>Source: Microsoft Azure Visual Brand Expression 2604</div>
+  </footer>
+
+</main>
+
+<!-- Toast notification -->
+<div class="toast" id="toast">Copied to clipboard!</div>
+
+<script>
+  // Copy hex to clipboard
+  function copyColor(hex, name) {
+    navigator.clipboard.writeText(hex).then(() => {
+      const toast = document.getElementById('toast');
+      toast.textContent = name + ' ' + hex + ' copied!';
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2000);
+    });
+  }
+
+  // Active nav highlighting
+  const sections = document.querySelectorAll('section[id], div.hero[id]');
+  const navLinks = document.querySelectorAll('nav a');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + entry.target.id) {
+            link.classList.add('active');
+          }
+        });
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
