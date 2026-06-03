@@ -1,0 +1,21 @@
+name: Assemble index.html
+on:
+  push:
+    paths: ['_chunk_*.txt']
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Assemble chunks
+        run: |
+          cat _chunk_0.txt _chunk_1.txt _chunk_2.txt _chunk_3.txt _chunk_4.txt _chunk_5.txt _chunk_6.txt > index.html
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git rm -f _chunk_*.txt
+          git rm -f .github/workflows/assemble.yml
+          git add index.html
+          git commit -m "feat: comprehensive v2 - textures, motion, icons, layout templates, Claude prompt"
+          git push
