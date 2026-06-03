@@ -4,45 +4,74 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Microsoft Azure — Brand Library · Red Door Collaborative</title>
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --az-blue:#0078d4;--energy:#0000b3;--deep:#000085;--navy:#0d0061;
-  --electric:#1a00e2;--indigo:#5d52ec;--sky:#00ffff;--teal:#00bbc3;
-  --lavender:#aac0fc;--mint:#cff3e8;--plum:#590055;--fuchsia:#d12aca;
-  --lgreen:#d4ec8e;--lgray:#d9d9d6;--white:#ffffff;
-  --bg:#f4f6f9;--surface:#fff;--text:#111827;--muted:#4b5563;--border:#e5e7eb;
-  --nav:260px;--r:12px;--rl:20px;
-}
-html{scroll-behavior:smooth}
-body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;display:flex}
-
-nav{position:fixed;top:0;left:0;width:var(--nav);height:100vh;background:var(--navy);overflow-y:auto;display:flex;flex-direction:column;z-index:100;padding-bottom:2rem}
-.nav-brand{padding:1.75rem 1.5rem 1.25rem;border-bottom:1px solid rgba(255,255,255,.1)}
-.nav-brand .ey{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.3rem}
-.nav-brand .ti{font-size:1rem;font-weight:600;color:#fff}
-.nav-brand .su{font-size:.72rem;color:rgba(255,255,255,.35);margin-top:.15rem}
-.nlabel{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.25);padding:1.1rem 1.5rem .35rem}
-nav a{display:block;padding:.5rem 1.5rem;font-size:.8rem;color:rgba(255,255,255,.6);text-decoration:none;transition:all .15s;border-left:2px solid transparent}
-nav a:hover{color:#fff;background:rgba(255,255,255,.06);border-left-color:var(--az-blue)}
-nav a.active{color:#fff;background:rgba(0,120,212,.2);border-left-color:var(--az-blue)}
-
-main{margin-left:var(--nav);flex:1;min-width:0}
-section{padding:3.5rem 4rem;border-bottom:1px solid var(--border)}
-section:last-child{border-bottom:none}
-.ey2{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--az-blue);margin-bottom:.5rem;font-weight:600}
-h2{font-size:1.75rem;font-weight:600;margin-bottom:.4rem}
-.intro{font-size:.95rem;color:var(--muted);max-width:680px;margin-bottom:2rem;line-height:1.7}
-.divider{border:none;border-top:1px solid var(--border);margin:2rem 0}
-.card{background:var(--surface);border-radius:var(--r);border:1px solid var(--border);padding:1.5rem}
-.card-title{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.65rem}
-.card p{font-size:.875rem;color:var(--muted);line-height:1.65}
-.g2{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
-.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<p>Placeholder — full content push via MCP</p>
+<nav id="sidebar">
+  <div class="nav-brand">
+    <div class="ey">Red Door Collaborative</div>
+    <div class="ti">Microsoft Azure</div>
+    <div class="su">Brand Library · April 2026</div>
+  </div>
+  <span class="nlabel">Quick Start</span>
+  <a href="#quickref">For HTML &amp; Claude</a>
+  <span class="nlabel">Brand System</span>
+  <a href="#principles">Design Principles</a>
+  <a href="#logo">Logo</a>
+  <a href="#color">Color Palette</a>
+  <a href="#typography">Typography</a>
+  <span class="nlabel">Visual Expression</span>
+  <a href="#photography">Photography</a>
+  <a href="#shapes3d">3D Building Blocks</a>
+  <a href="#wireframes">Wireframes</a>
+  <a href="#holding">Holding Shapes</a>
+  <a href="#textures">Textures</a>
+  <a href="#layouts">Layout Templates</a>
+  <a href="#motion">Motion &amp; Animation</a>
+  <a href="#icons">Icon Gallery</a>
+  <span class="nlabel">Reference</span>
+  <a href="#resources">Resources &amp; Assets</a>
+</nav>
+<main>
+<div class="hero" id="hero">
+  <div class="hero-eye">Visual Brand Expression · April 2026</div>
+  <h1>Microsoft <strong>Azure</strong><br>Brand Library</h1>
+  <p>A comprehensive visual reference and code resource for building Azure-branded HTML — covering every element of the April 2026 brand system.</p>
+  <div class="hero-badge">Build in Public — the Azure brand theme</div>
+  <div class="hero-meta">
+    <div class="hm"><label>Typeface</label><span>Segoe Sans Display</span></div>
+    <div class="hm"><label>Primary color</label><span>#0078d4</span></div>
+    <div class="hm"><label>Version</label><span>April 2026</span></div>
+    <div class="hm"><label>Internal use</label><span>Red Door Collaborative</span></div>
+  </div>
+</div>
+<div id="az-main">
+  <div style="display:flex;align-items:center;justify-content:center;height:60vh;background:var(--bg)">
+    <div style="text-align:center;color:var(--muted);font-size:.9rem">Loading brand library…</div>
+  </div>
+</div>
+</main>
+<footer style="background:var(--navy);color:rgba(255,255,255,.45);padding:2rem 4rem;font-size:.78rem;display:flex;justify-content:space-between;align-items:center">
+  <div><strong style="color:rgba(255,255,255,.75)">Microsoft Azure Brand Library</strong> · Red Door Collaborative · April 2026</div>
+  <div>Source: Microsoft Azure Visual Brand Expression 2604 · Internal use only</div>
+</footer>
+<div class="toast" id="toast">Copied!</div>
+<script src="copy.js"></script>
+<script src="snippets.js"></script>
+<script>
+(async function(){
+  const container = document.getElementById('az-main');
+  try {
+    const parts = await Promise.all(
+      ['part1.html','part2.html','part3.html','part4.html']
+        .map(p => fetch(p).then(r => r.text()))
+    );
+    container.innerHTML = parts.join('');
+  } catch(e) {
+    container.innerHTML = '<section style="padding:3rem 4rem"><p style="color:#be123c">Failed to load content. Please refresh the page.</p></section>';
+  }
+})();
+</script>
+<script src="script.js"></script>
 </body>
 </html>

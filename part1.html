@@ -1,0 +1,101 @@
+<!-- ══ QUICK REFERENCE ══ -->
+<section id="quickref" style="background:#fff">
+<div class="ey2">Quick Start</div>
+<h2>For HTML &amp; Claude Projects</h2>
+<p class="intro">Use this section when generating Azure-branded HTML — either directly or by prompting Claude. Copy the CSS tokens, the Claude prompt, or the HTML boilerplate and paste them into your project.</p>
+<div class="qref-tabs">
+  <button class="qtab on" onclick="showTab('css')">CSS Design Tokens</button>
+  <button class="qtab" onclick="showTab('prompt')">Claude Prompt</button>
+  <button class="qtab" onclick="showTab('boiler')">HTML Boilerplate</button>
+  <button class="qtab" onclick="showTab('gradients')">Gradient Recipes</button>
+</div>
+<div class="qpane on" id="pane-css">
+  <div class="code-block">
+    <div class="code-bar"><span class="code-lang">CSS — Azure Design Tokens</span><button class="copy-code" onclick="copyBlock('css-tokens')">Copy</button></div>
+    <pre id="css-tokens"></pre>
+  </div>
+</div>
+<div class="qpane" id="pane-prompt">
+  <div class="prompt-box">
+    <div class="prompt-header">
+      <span>Claude System Prompt — Azure Brand HTML</span>
+      <button class="copy-code" onclick="copyBlock('claude-prompt')">Copy prompt</button>
+    </div>
+    <pre class="prompt-body" id="claude-prompt"></pre>
+  </div>
+</div>
+<div class="qpane" id="pane-boiler">
+  <div class="code-block">
+    <div class="code-bar"><span class="code-lang">HTML — Azure Brand Boilerplate</span><button class="copy-code" onclick="copyBlock('html-boiler')">Copy</button></div>
+    <pre id="html-boiler"></pre>
+  </div>
+</div>
+<div class="qpane" id="pane-gradients">
+  <div class="g3" style="margin-bottom:1rem">
+    <div class="card-ov"><div style="height:80px;background:linear-gradient(135deg,#0d0061,#000085 40%,#0078d4 80%,#1a00e2)"></div><div class="sw-info"><div class="card-meta-name">Hero / Dark</div><div class="code-block" style="margin-top:0"><div class="code-bar"><span class="code-lang">CSS</span><button class="copy-code" onclick="copyText('linear-gradient(135deg,#0d0061,#000085 40%,#0078d4 80%,#1a00e2)')">Copy</button></div><pre style="padding:.6rem;font-size:.7rem">linear-gradient(135deg,#0d0061,#000085 40%,#0078d4 80%,#1a00e2)</pre></div></div></div>
+    <div class="card-ov"><div style="height:80px;background:linear-gradient(135deg,#000085,#0078d4)"></div><div class="sw-info"><div class="card-meta-name">Card / Section</div><div class="code-block" style="margin-top:0"><div class="code-bar"><span class="code-lang">CSS</span><button class="copy-code" onclick="copyText('linear-gradient(135deg,#000085,#0078d4)')">Copy</button></div><pre style="padding:.6rem;font-size:.7rem">linear-gradient(135deg,#000085,#0078d4)</pre></div></div></div>
+    <div class="card-ov"><div style="height:80px;background:linear-gradient(135deg,#0078d4,#00bbc3)"></div><div class="sw-info"><div class="card-meta-name">Teal Accent</div><div class="code-block" style="margin-top:0"><div class="code-bar"><span class="code-lang">CSS</span><button class="copy-code" onclick="copyText('linear-gradient(135deg,#0078d4,#00bbc3)')">Copy</button></div><pre style="padding:.6rem;font-size:.7rem">linear-gradient(135deg,#0078d4,#00bbc3)</pre></div></div></div>
+    <div class="card-ov"><div style="height:80px;background:linear-gradient(135deg,#000085,#5d52ec)"></div><div class="sw-info"><div class="card-meta-name">Indigo</div><div class="code-block" style="margin-top:0"><div class="code-bar"><span class="code-lang">CSS</span><button class="copy-code" onclick="copyText('linear-gradient(135deg,#000085,#5d52ec)')">Copy</button></div><pre style="padding:.6rem;font-size:.7rem">linear-gradient(135deg,#000085,#5d52ec)</pre></div></div></div>
+    <div class="card-ov"><div style="height:80px;background:linear-gradient(135deg,#590055,#d12aca)"></div><div class="sw-info"><div class="card-meta-name">Plum / Fuchsia (5% max)</div><div class="code-block" style="margin-top:0"><div class="code-bar"><span class="code-lang">CSS</span><button class="copy-code" onclick="copyText('linear-gradient(135deg,#590055,#d12aca)')">Copy</button></div><pre style="padding:.6rem;font-size:.7rem">linear-gradient(135deg,#590055,#d12aca)</pre></div></div></div>
+    <div class="card-ov"><div style="height:80px;background:linear-gradient(135deg,#0d0061 0%,#0078d4 50%,#00bbc3 100%)"></div><div class="sw-info"><div class="card-meta-name">Tricolor Navy→Azure→Teal</div><div class="code-block" style="margin-top:0"><div class="code-bar"><span class="code-lang">CSS</span><button class="copy-code" onclick="copyText('linear-gradient(135deg,#0d0061 0%,#0078d4 50%,#00bbc3 100%)')">Copy</button></div><pre style="padding:.6rem;font-size:.7rem">linear-gradient(135deg,#0d0061 0%,#0078d4 50%,#00bbc3 100%)</pre></div></div></div>
+  </div>
+</div>
+</section>
+<!-- ══ DESIGN PRINCIPLES ══ -->
+<section id="principles">
+<div class="ey2">02 — Design Principles</div>
+<h2>Build in Public</h2>
+<p class="intro">Six principles govern every Azure creative decision. Each card below is designed using the principle it describes — the layout IS the demonstration.</p>
+<div class="g3" style="gap:1.25rem">
+  <div style="background:linear-gradient(135deg,#0d0061,#000085);border-radius:var(--rl);padding:2rem;overflow:hidden;position:relative"><div class="pc-num-w">01</div><div style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--sky);margin-bottom:.75rem;font-weight:700">Immersion</div><div class="pc-title">Dive into<br>captivating detail</div><p class="pc-body">Rich activity and detail, in both physical and conceptual spaces. Intimate, cropped views that pull the viewer in as a collaborator.</p><div style="margin-top:1.25rem;display:flex;gap:.5rem"><div style="flex:2;height:48px;border-radius:9999px;background:linear-gradient(135deg,#0078d4,#00bbc3);overflow:hidden"></div><div style="flex:1;height:48px;border-radius:9999px;background:linear-gradient(135deg,#5d52ec,#0d0061);overflow:hidden"></div></div></div>
+  <div style="background:linear-gradient(160deg,#000085 0%,#0078d4 100%);border-radius:var(--rl);padding:2rem;overflow:hidden;position:relative"><div class="pc-num-w">02</div><div style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--mint);margin-bottom:.75rem;font-weight:700">Infinite</div><div class="pc-title">Vast scale,<br>limitless possibility</div><p class="pc-body">Limitless innovation through scale — 3D unlimited data flows, cinematic wide views, compositions that feel boundless.</p><div style="margin-top:1.25rem;display:flex;align-items:center;gap:4px"><div style="width:8px;height:8px;border-radius:50%;background:var(--sky);animation:pulse 2s ease-in-out infinite"></div><div style="flex:1;height:2px;background:linear-gradient(90deg,var(--sky),transparent)"></div><div style="width:6px;height:6px;border-radius:50%;background:var(--lavender);animation:pulse 2s ease-in-out infinite .3s"></div><div style="flex:2;height:2px;background:linear-gradient(90deg,var(--lavender),transparent)"></div><div style="width:10px;height:10px;border-radius:50%;background:var(--mint);animation:pulse 2s ease-in-out infinite .6s"></div></div></div>
+  <div style="background:linear-gradient(135deg,#0d0061,#1a00e2);border-radius:var(--rl);padding:2rem;overflow:hidden;position:relative"><div class="pc-num-w">03</div><div style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--lavender);margin-bottom:.75rem;font-weight:700">Expert</div><div class="pc-title">Technical precision,<br>schematic clarity</div><p class="pc-body">Deep expertise through schematic wireframe illustrations, precise headlines, and clean architectural lines.</p><div style="margin-top:1.25rem"><svg viewBox="0 0 180 36" width="180" height="36"><rect x="4" y="12" width="24" height="12" rx="3" fill="none" stroke="#5d52ec" stroke-width="1.5"/><line x1="28" y1="18" x2="44" y2="18" stroke="#1a00e2" stroke-width="1.5" stroke-dasharray="3,2"/><circle cx="84" cy="18" r="8" fill="none" stroke="#5d52ec" stroke-width="1.5"/><line x1="92" y1="18" x2="108" y2="18" stroke="#1a00e2" stroke-width="1.5" stroke-dasharray="3,2"/><polygon points="108,10 124,18 108,26" fill="none" stroke="#00bbc3" stroke-width="1.5"/><circle cx="150" cy="18" r="10" fill="none" stroke="#aac0fc" stroke-width="1.5"/></svg></div></div>
+  <div style="background:linear-gradient(135deg,#000085,#00bbc3);border-radius:var(--rl);padding:2rem;overflow:hidden;position:relative"><div class="pc-num-w">04</div><div style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--mint);margin-bottom:.75rem;font-weight:700">Curious</div><div class="pc-title">Beautiful in<br>the specifics</div><p class="pc-body">Close-up and macro photography. Microfluidic chips, circuit details, fiber optic nodes. The frontier is gorgeous up close.</p><div style="margin-top:1.25rem;display:grid;grid-template-columns:repeat(4,1fr);gap:4px"><div style="height:32px;border-radius:6px;background:rgba(0,255,255,.15);border:1px solid rgba(0,255,255,.3)"></div><div style="height:32px;border-radius:6px;background:rgba(0,187,195,.2);border:1px solid rgba(0,187,195,.4)"></div><div style="height:32px;border-radius:6px;background:rgba(93,82,236,.2);border:1px solid rgba(93,82,236,.4)"></div><div style="height:32px;border-radius:6px;background:rgba(0,255,255,.1);border:1px solid rgba(0,255,255,.2)"></div></div></div>
+  <div style="background:linear-gradient(135deg,#0d0061,#0078d4);border-radius:var(--rl);padding:2rem;overflow:hidden;position:relative"><div class="pc-num-w">05</div><div style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--sky);margin-bottom:.75rem;font-weight:700">Forward</div><div class="pc-title">Momentum,<br>direction, motion</div><p class="pc-body">Forward momentum through central focal points, moving subjects, and directional 3D flows. Things always moving rightward.</p><div style="margin-top:1.25rem;position:relative;height:32px;overflow:hidden;border-radius:6px;background:rgba(0,0,0,.2)"><div style="position:absolute;height:4px;top:50%;transform:translateY(-50%);width:30px;background:var(--sky);border-radius:2px;animation:dataFlow 2s linear infinite;box-shadow:0 0 12px var(--sky)"></div><div style="position:absolute;height:4px;top:50%;transform:translateY(-50%);width:20px;background:var(--lavender);border-radius:2px;animation:dataFlow 2s linear infinite .7s"></div><div style="position:absolute;height:4px;top:50%;transform:translateY(-50%);width:40px;background:var(--mint);border-radius:2px;animation:dataFlow 2s linear infinite 1.4s"></div></div></div>
+  <div style="background:linear-gradient(135deg,#000085,#590055);border-radius:var(--rl);padding:2rem;overflow:hidden;position:relative"><div class="pc-num-w">06</div><div style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--lavender);margin-bottom:.75rem;font-weight:700">Authentic</div><div class="pc-title">Real people,<br>real places</div><p class="pc-body">Real people and places. Lived-in wardrobes, personal effects on desks, natural expressions. Uniquely Azure.</p><div style="margin-top:1.25rem;display:flex;gap:.75rem;align-items:center"><div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#aac0fc,#5d52ec);flex-shrink:0"></div><div style="flex:1"><div style="height:8px;border-radius:4px;background:rgba(255,255,255,.2);margin-bottom:4px;width:70%"></div><div style="height:6px;border-radius:3px;background:rgba(255,255,255,.12);width:45%"></div></div></div></div>
+</div>
+</section>
+<!-- ══ LOGO ══ -->
+<section id="logo" style="background:#fff">
+<div class="ey2">03 — Logo</div>
+<h2>Logo Usage</h2>
+<p class="intro">The positive (full-color) logo is primary. For dark or color backgrounds use the reverse or single-color variants. A stacked secondary logo is available for tight spaces.</p>
+<div class="g2" style="gap:1.25rem;margin-bottom:1.5rem">
+  <div style="background:#f8f9fa;border:1px solid var(--border);border-radius:var(--rl);padding:2.5rem;display:flex;flex-direction:column"><svg viewBox="0 0 240 48" width="220" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="4" width="36" height="36" rx="3" fill="#0078d4"/><polygon points="9,36 18,10 27,36 23,36 18,20 13,36" fill="white"/><text x="44" y="26" font-family="Segoe UI,sans-serif" font-size="17" fill="#0078d4" font-weight="300">Microsoft</text><text x="44" y="38" font-family="Segoe UI,sans-serif" font-size="10" fill="#0078d4" letter-spacing="2">Azure</text></svg><span style="font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-top:1rem">Positive Logo · Light Background · Primary</span></div>
+  <div style="background:var(--navy);border-radius:var(--rl);padding:2.5rem;display:flex;flex-direction:column"><svg viewBox="0 0 240 48" width="220" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="4" width="36" height="36" rx="3" fill="#0078d4"/><polygon points="9,36 18,10 27,36 23,36 18,20 13,36" fill="white"/><text x="44" y="26" font-family="Segoe UI,sans-serif" font-size="17" fill="#ffffff" font-weight="300">Microsoft</text><text x="44" y="38" font-family="Segoe UI,sans-serif" font-size="10" fill="#ffffff" letter-spacing="2">Azure</text></svg><span style="font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.4);margin-top:1rem">Reverse Logo · Dark Background · Primary</span></div>
+  <div style="background:var(--az-blue);border-radius:var(--rl);padding:2.5rem;display:flex;flex-direction:column"><svg viewBox="0 0 240 48" width="220" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="4" width="36" height="36" rx="3" fill="rgba(255,255,255,0.25)"/><polygon points="9,36 18,10 27,36 23,36 18,20 13,36" fill="white"/><text x="44" y="26" font-family="Segoe UI,sans-serif" font-size="17" fill="#ffffff" font-weight="300">Microsoft</text><text x="44" y="38" font-family="Segoe UI,sans-serif" font-size="10" fill="#ffffff" letter-spacing="2">Azure</text></svg><span style="font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.5);margin-top:1rem">Single-color · Color Bg Medium Value</span></div>
+  <div style="background:var(--deep);border-radius:var(--rl);padding:2.5rem;display:flex;flex-direction:column"><svg viewBox="0 0 240 48" width="220" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="4" width="36" height="36" rx="3" fill="#0078d4"/><polygon points="9,36 18,10 27,36 23,36 18,20 13,36" fill="white"/><text x="44" y="26" font-family="Segoe UI,sans-serif" font-size="17" fill="#ffffff" font-weight="300">Microsoft</text><text x="44" y="38" font-family="Segoe UI,sans-serif" font-size="10" fill="#ffffff" letter-spacing="2">Azure</text></svg><span style="font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.4);margin-top:1rem">Full-color Logo · Dark Color Bg</span></div>
+</div>
+<div class="g3"><div class="card"><div class="card-title">Clearspace</div><p>Minimum clearspace of <strong>1×</strong> the logo symbol size on all sides.</p></div><div class="card"><div class="card-title">Layout Margins</div><p>Minimum margin of <strong>1× or 2×</strong> the logo symbol in all layouts.</p></div><div class="card"><div class="card-title">Product Icon ≠ Logo</div><p>The Azure product icon appears in dashboards only. <strong>Never</strong> use it in marketing materials.</p></div></div>
+</section>
+<!-- ══ COLOR ══ -->
+<section id="color">
+<div class="ey2">04 — Color</div>
+<h2>Color Palette</h2>
+<p class="intro">Azure’s palette anchors in blues — from deep navy to sky — with purposeful accents. Click any swatch to copy its hex. Usage rule: blues and neutrals dominate, accents are sparse.</p>
+<div class="usage-bar"><div class="us" style="flex:40;background:#e5e7eb;color:#374151">40% Neutrals &amp; Lights</div><div class="us" style="flex:40;background:var(--az-blue);color:#fff">40% Blues</div><div class="us" style="flex:15;background:var(--indigo);color:#fff">15% Tertiary</div><div class="us" style="flex:5;background:var(--fuchsia);color:#fff;font-size:.6rem">5%</div></div>
+<div class="sec-label">Primary Blues</div>
+<div class="swatches">
+  <div class="sw" onclick="copyColor('#0078d4','Azure Blue')"><div class="sw-c" style="background:#0078d4"></div><div class="sw-i"><div class="sw-n">Azure Blue</div><div class="sw-h">#0078d4<button class="cpbtn">copy</button></div></div></div>
+  <div class="sw" onclick="copyColor('#0000b3','Energy Blue')"><div class="sw-c" style="background:#0000b3"></div><div class="sw-i"><div class="sw-n">Energy Blue</div><div class="sw-h">#0000b3<button class="cpbtn">copy</button></div></div></div>
+  <div class="sw" onclick="copyColor('#000085','Deep Blue')"><div class="sw-c" style="background:#000085"></div><div class="sw-i"><div class="sw-n">Deep Blue</div><div class="sw-h">#000085<button class="cpbtn">copy</button></div></div></div>
+  <div class="sw" onclick="copyColor('#0d0061','Navy Blue')"><div class="sw-c" style="background:#0d0061"></div><div class="sw-i"><div class="sw-n">Navy Blue</div><div class="sw-h">#0d0061<button class="cpbtn">copy</button></div></div></div>
+  <div class="sw" onclick="copyColor('#1a00e2','Electric Blue')"><div class="sw-c" style="background:#1a00e2"></div><div class="sw-i"><div class="sw-n">Electric Blue</div><div class="sw-h">#1a00e2<button class="cpbtn">copy</button></div></div></div>
+</div>
+<div class="sec-label">Secondary &amp; Accent</div>
+<div class="swatches">
+  <div class="sw" onclick="copyColor('#5d52ec','Bright Indigo')"><div class="sw-c" style="background:#5d52ec"></div><div class="sw-i"><div class="sw-n">Bright Indigo</div><div class="sw-h">#5d52ec<button class="cpbtn">copy</button></div></div></div>
+  <div class="sw" onclick="copyColor('#00bbc3','Turquoise')"><div class="sw-c" style="background:#00bbc3"></div><div class="sw-i"><div class="sw-n">Turquoise</div><div class="sw-h">#00bbc3<button class="cpbtn">copy</button></div></div></div>
+  <div class="sw" onclick="copyColor('#00ffff','Sky Blue')"><div class="sw-c" style="background:#00ffff;border-bottom:1px solid #e5e7eb"></div><div class="sw-i"><div class="sw-n">Sky Blue</div><div class="sw-h">#00ffff<button class="cpbtn">copy</button></div></div></div>
+  <div class="sw" onclick="copyColor('#aac0fc','Lavender')"><div class="sw-c" style="background:#aac0fc"></div><div class="sw-i"><div class="sw-n">Lavender</div><div class="sw-h">#aac0fc<button class="cpbtn">copy</button></div></div></div>
+  <div class="sw" onclick="copyColor('#590055','Plum')"><div class="sw-c" style="background:#590055"></div><div class="sw-i"><div class="sw-n">Plum</div><div class="sw-h">#590055<button class="cpbtn">copy</button></div></div></div>
+  <div class="sw" onclick="copyColor('#d12aca','Fuchsia')"><div class="sw-c" style="background:#d12aca"></div><div class="sw-i"><div class="sw-n">Fuchsia</div><div class="sw-h">#d12aca<button class="cpbtn">copy</button></div></div></div>
+</div>
+<div class="sec-label">Neutrals &amp; Lights</div>
+<div class="swatches">
+  <div class="sw" onclick="copyColor('#ffffff','Pure White')"><div class="sw-c" style="background:#fff;border-bottom:1px solid #e5e7eb"></div><div class="sw-i"><div class="sw-n">Pure White</div><div class="sw-h">#ffffff<button class="cpbtn">copy</button></div></div></div>
+  <div class="sw" onclick="copyColor('#d9d9d6','Light Gray')"><div class="sw-c" style="background:#d9d9d6"></div><div class="sw-i"><div class="sw-n">Light Gray</div><div class="sw-h">#d9d9d6<button class="cpbtn">copy</button></div></div></div>
+  <div class="sw" onclick="copyColor('#cff3e8','Mint')"><div class="sw-c" style="background:#cff3e8"></div><div class="sw-i"><div class="sw-n">Mint</div><div class="sw-h">#cff3e8<button class="cpbtn">copy</button></div></div></div>
+  <div class="sw" onclick="copyColor('#d4ec8e','Light Green')"><div class="sw-c" style="background:#d4ec8e"></div><div class="sw-i"><div class="sw-n">Light Green</div><div class="sw-h">#d4ec8e<button class="cpbtn">copy</button></div></div></div>
+</div>
+</section>
