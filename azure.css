@@ -1,0 +1,38 @@
+/* ================================================================
+   MICROSOFT AZURE — TOKEN OVERRIDES FOR RDC FOUNDATIONS LIBRARY
+   azure.css
+
+   Load order: rdc.css (base) → azure.css (this file) → style.css (Azure components)
+
+   This file maps RDC CSS custom properties to Microsoft Azure brand
+   values. Any rdc.css component (.btn, .doc-card, .badge, .alert, etc.)
+   dropped into an Azure page will automatically render in Azure colors.
+
+   style.css owns all Azure-specific components (swatches, type specimens,
+   motion cards, etc.) and takes precedence over rdc.css for shared class
+   names like .card and .divider.
+================================================================ */
+
+:root {
+  /* ── Brand color mapping ───────────────────────────────────── */
+  --coral:  #0078d4;   /* Azure Blue    → replaces RDC Coral (CTAs, links) */
+  --squid:  #0d0061;   /* Azure Deep    → replaces RDC Squid (dark surfaces) */
+  --wine:   #5d52ec;   /* Azure Indigo  → replaces RDC Wine (secondary accent) */
+  --mist:   #aac0fc;   /* Azure Lavender → replaces RDC Mist (soft accent) */
+
+  /* ── Surface & background ──────────────────────────────────── */
+  --page-bg: #f4f6f9;  /* Azure light bg, matches style.css --bg */
+  --white:   #ffffff;
+
+  /* ── Typography ────────────────────────────────────────────── */
+  --font-sans: 'Segoe UI', 'Segoe Sans Display', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Consolas', 'Monaco', ui-monospace, monospace;
+}
+
+/*
+  Dark mode note:
+  rdc.js (layout toggle) is not yet added to this library because
+  style.css does not include dark mode overrides. Add dark mode
+  support to style.css first, then add the rdc.js CDN script and
+  the FOUC prevention inline script to index.html.
+*/
